@@ -11,7 +11,4 @@ public class ScommesseRpctechApplication
 	{
 		SpringApplication.run(ScommesseRpctechApplication.class, args);
 	}
-
 }
-
-//bubu
