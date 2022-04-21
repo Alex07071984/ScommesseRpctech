@@ -1,5 +1,6 @@
 package com.ProgettoScommesse.model;
 
-public class Riccardo {
-
+public class Riccardo
+{
+//ciccia
 }
