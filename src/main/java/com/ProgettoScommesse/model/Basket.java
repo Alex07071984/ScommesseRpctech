@@ -15,7 +15,7 @@ public class Basket {
 	   @Id
 	   @GeneratedValue(strategy = GenerationType.IDENTITY )
 	   @Column(name = "id")
-	   private Integer id;
+	   private Integer idaa;
 	   @Column(name ="data")
 	   private Date data;
 	   @Column(name ="ora")
