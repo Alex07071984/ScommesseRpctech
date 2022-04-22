@@ -15,7 +15,7 @@ public class Basket {
 	   @Id
 	   @GeneratedValue(strategy = GenerationType.IDENTITY )
 	   @Column(name = "id")
-	   private Integer idaa;
+	   private Integer id;
 	   @Column(name ="data")
 	   private Date data;
 	   @Column(name ="ora")
@@ -25,7 +25,7 @@ public class Basket {
 	   @Column(name ="palinsesto")
 	   private int pal;
 	   @Column(name ="avvenimento")
-	   private int avv;
+	   private int avvaa;
 	   @Column(name ="S1")
 	   private String sq1;
 	   @Column(name ="S2")
