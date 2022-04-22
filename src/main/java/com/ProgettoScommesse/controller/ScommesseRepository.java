@@ -2,9 +2,9 @@ package com.ProgettoScommesse.controller;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.Scommesse.ScommesseDomain.Utente;
+import com.ProgettoScommesse.model.Utente;
 
-public class ScommesseRepository extends JpaRepository<Utente,Long>
+public interface ScommesseRepository extends JpaRepository<Utente,Long>
 {
 
 }

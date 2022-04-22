@@ -9,10 +9,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Scommesse")
-public class Scommesse {
-	
+public class Scommesse 
+{
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name = "id_schedina")
 	private int id_schedina;
@@ -29,12 +29,13 @@ public class Scommesse {
 	@Column (name="quota")
 	private float quota;
 	
-	  public Scommesse() {
-		   super();
-	   }
+	public Scommesse()
+	{
+		super();
+	}
 	
-	public Scommesse(Integer id, int id_schedina, String sport, String username, String partita, int codice,
-			String segno, float quota) {
+	public Scommesse(Integer id, int id_schedina, String sport, String username, String partita, int codice, String segno, float quota)
+	{
 		super();
 		this.id = id;
 		this.id_schedina = id_schedina;
@@ -46,85 +47,83 @@ public class Scommesse {
 		this.quota = quota;
 	}
 
-
-	public Integer getId() {
+	public Integer getId()
+	{
 		return id;
 	}
 
-
-	public void setId(Integer id) {
+	public void setId(Integer id)
+	{
 		this.id = id;
 	}
 
-
-	public int getId_schedina() {
+	public int getId_schedina()
+	{
 		return id_schedina;
 	}
 
-
-	public void setId_schedina(int id_schedina) {
+	public void setId_schedina(int id_schedina)
+	{
 		this.id_schedina = id_schedina;
 	}
 
-
-	public String getSport() {
+	public String getSport()
+	{
 		return sport;
 	}
 
-
-	public void setSport(String sport) {
+	public void setSport(String sport)
+	{
 		this.sport = sport;
 	}
 
-
-	public String getUsername() {
+	public String getUsername()
+	{
 		return username;
 	}
 
-
-	public void setUsername(String username) {
+	public void setUsername(String username)
+	{
 		this.username = username;
 	}
 
-
-	public String getPartita() {
+	public String getPartita()
+	{
 		return partita;
 	}
 
-
-	public void setPartita(String partita) {
+	public void setPartita(String partita)
+	{
 		this.partita = partita;
 	}
 
-
-	public int getCodice() {
+	public int getCodice() 
+	{
 		return codice;
 	}
 
-
-	public void setCodice(int codice) {
+	public void setCodice(int codice)
+	{
 		this.codice = codice;
 	}
 
-
-	public String getSegno() {
+	public String getSegno()
+	{
 		return segno;
 	}
 
-
-	public void setSegno(String segno) {
+	public void setSegno(String segno)
+	{
 		this.segno = segno;
 	}
 
-
-	public float getQuota() {
+	public float getQuota()
+	{
 		return quota;
 	}
 
-
-	public void setQuota(float quota) {
+	public void setQuota(float quota)
+	{
 		this.quota = quota;
 	}
-	
-	
 }
