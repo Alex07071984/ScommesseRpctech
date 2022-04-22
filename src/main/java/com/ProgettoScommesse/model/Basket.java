@@ -25,7 +25,7 @@ public class Basket {
 	   @Column(name ="palinsesto")
 	   private int pal;
 	   @Column(name ="avvenimento")
-	   private int avvaa;
+	   private int avv;
 	   @Column(name ="S1")
 	   private String sq1;
 	   @Column(name ="S2")
