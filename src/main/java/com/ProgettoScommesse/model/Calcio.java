@@ -1,7 +1,6 @@
 package com.ProgettoScommesse.model;
 
-
-
+import java.sql.Time;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,12 +15,12 @@ import javax.persistence.Table;
 public class Calcio
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name ="data")
 	private Date data;
 	@Column(name ="ora")
-	private float ora;
+	private Time ora;
 	@Column(name ="manifestazione")
 	private String man;
 	@Column(name ="palinsesto")
@@ -44,7 +43,7 @@ public class Calcio
 		super();
 	}
 	   
-	public Calcio(Date data, float ora, String man, int pal, int avv, String sq1, String sq2, float sq1vincente, float pareggio, float sq2vincente)
+	public Calcio(Date data, Time ora, String man, int pal, int avv, String sq1, String sq2, float sq1vincente, float pareggio, float sq2vincente)
 	{
 		super();
 		this.data=data;
@@ -79,12 +78,12 @@ public class Calcio
 		this.data = data;
 	}
 
-	public float getOra()
+	public Time getOra()
 	{
 		return ora;
 	}
 
-	public void setOra(float ora)
+	public void setOra(Time ora)
 	{
 		this.ora = ora;
 	}
