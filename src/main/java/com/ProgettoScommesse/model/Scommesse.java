@@ -34,10 +34,9 @@ public class Scommesse
 		super();
 	}
 	
-	public Scommesse(Integer id, int id_schedina, String sport, String username, String partita, int codice, String segno, float quota)
+	public Scommesse(int id_schedina, String sport, String username, String partita, int codice, String segno, float quota)
 	{
 		super();
-		this.id = id;
 		this.id_schedina = id_schedina;
 		this.sport = sport;
 		this.username = username;
@@ -45,16 +44,6 @@ public class Scommesse
 		this.codice = codice;
 		this.segno = segno;
 		this.quota = quota;
-	}
-
-	public Integer getId()
-	{
-		return id;
-	}
-
-	public void setId(Integer id)
-	{
-		this.id = id;
 	}
 
 	public int getId_schedina()

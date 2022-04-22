@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="schedina")
+@Table (name = "schedina")
 public class Schedina
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	private Integer Id;
-	@Column (name="codice_schedina")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	@Column (name = "codice_schedina")
 	private String cs;
-	@Column (name="importo")
+	@Column (name = "importo")
 	private float imp;
 	
 	public Schedina()
@@ -24,22 +24,11 @@ public class Schedina
 		 super();
 	}
 	  
-	public Schedina(Integer id, String cs, float imp)
+	public Schedina(String cs, float imp)
 	{
 		super();
-		Id = id;
 		this.cs = cs;
 		this.imp = imp;
-	}
-
-	public Integer getId()
-	{
-		return Id;
-	}
-
-	public void setId(Integer id)
-	{
-		Id = id;
 	}
 
 	public String getCs()

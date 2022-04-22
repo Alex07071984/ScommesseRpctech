@@ -18,9 +18,9 @@ public class Volley
 	@Column(name = "id")
 	private Integer id;
 	@Column(name ="data")
-	private Date data;
+	private String data;
 	@Column(name ="ora")
-	private float ora;
+	private String ora;
     @Column(name ="manifestazione")
 	private String man;
 	@Column(name ="palinsesto")
@@ -41,7 +41,7 @@ public class Volley
 		super();
 	}
 	   
-	public Volley(Date data, float ora, String man, int pal, int avv, String sq1, String sq2, float sq1vincente, float sq2vincente)
+	public Volley(String data, String ora, String man, int pal, int avv, String sq1, String sq2, float sq1vincente, float sq2vincente)
 	{
 		super();
 		this.data=data;
@@ -54,33 +54,23 @@ public class Volley
 		this.sq1vincente=sq1vincente;
 		this.sq2vincente=sq2vincente;
 	}
-	   
-	public Integer getId()
-	{
-		return id;
-	}
 
-	public void setId(Integer id)
-	{
-		this.id = id;
-	}
-
-	public Date getData()
+	public String getData()
 	{
 		return data;
 	}
 
-	public void setData(Date data)
+	public void setData(String data)
 	{
 		this.data = data;
 	}
 
-	public float getOra()
+	public String getOra()
 	{
 		return ora;
 	}
 
-	public void setOra(float ora)
+	public void setOra(String ora)
 	{
 		this.ora = ora;
 	}
