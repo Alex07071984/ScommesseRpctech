@@ -6,5 +6,6 @@ public class Prova
 	{
 		System.out.println("Ciao");
 		System.out.println("Ciao2");
+		System.out.println("Ciao5");
 	}
 }
