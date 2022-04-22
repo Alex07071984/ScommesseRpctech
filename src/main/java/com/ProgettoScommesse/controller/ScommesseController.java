@@ -1,5 +1,6 @@
 package com.ProgettoScommesse.controller;
 
-public class ScommesseController {
+public class ScommesseController
+{
 
 }
