@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Scommesse")
-public class Scommesse 
+@Table(name="Scommessa")
+public class Scommessa 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,12 +29,12 @@ public class Scommesse
 	@Column (name="quota")
 	private float quota;
 	
-	public Scommesse()
+	public Scommessa()
 	{
 		super();
 	}
 	
-	public Scommesse(int id_schedina, String sport, String username, String partita, int codice, String segno, float quota)
+	public Scommessa(int id_schedina, String sport, String username, String partita, int codice, String segno, float quota)
 	{
 		super();
 		this.id_schedina = id_schedina;
