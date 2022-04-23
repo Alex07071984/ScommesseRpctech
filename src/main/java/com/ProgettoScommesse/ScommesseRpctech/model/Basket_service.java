@@ -1,4 +1,4 @@
-package com.ProgettoScommesse.model;
+package com.ProgettoScommesse.ScommesseRpctech.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
