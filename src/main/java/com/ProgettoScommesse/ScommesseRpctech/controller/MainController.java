@@ -30,7 +30,6 @@ public class MainController
     @Autowired
     Scommessa_service sss;
     
-
     @ResponseBody
     @GetMapping("/")
     public ArrayList getAll()
