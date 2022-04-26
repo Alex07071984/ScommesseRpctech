@@ -1,6 +1,9 @@
 package com.ProgettoScommesse.ScommesseRpctech.controller;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ProgettoScommesse.ScommesseRpctech.model.Volley_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Calcio_service;
+import com.ProgettoScommesse.ScommesseRpctech.model.Schedina;
 import com.ProgettoScommesse.ScommesseRpctech.model.Basket_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Calcio;
 import com.ProgettoScommesse.ScommesseRpctech.model.Utente_service;
@@ -32,7 +36,7 @@ public class MainController
     Scommessa_service sss;
     
     @ResponseBody
-    @GetMapping("/")
+    @GetMapping("/all")
     public ArrayList getAll()
     { 
     	ArrayList calcio = new ArrayList();
@@ -42,5 +46,17 @@ public class MainController
     		calcio.add(app.getAvv());
     	}
         return calcio;
+    }
+    
+    @Transactional
+    public void schedina()
+    {
+    	Schedina schedina = new Schedina();
+    	
+    	long random = 1 + (int)(Math.random() * 99999999);
+    	
+    	schedina.setCs(random);
+    	schedina.setImp(10);
+    	ss.save(schedina);
     }
 }
