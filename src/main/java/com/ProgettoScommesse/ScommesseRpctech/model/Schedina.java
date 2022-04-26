@@ -15,7 +15,7 @@ public class Schedina
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column (name = "codice_schedina")
-	private Long cs;
+	private long cs;
 	@Column (name = "importo")
 	private float imp;
 	
@@ -24,7 +24,7 @@ public class Schedina
 		 super();
 	}
 	  
-	public Schedina(Long cs, float imp)
+	public Schedina(long cs, float imp)
 	{
 		super();
 		this.cs = cs;
@@ -36,7 +36,7 @@ public class Schedina
 		return cs;
 	}
 
-	public void setCs(Long cs)
+	public void setCs(long cs)
 	{
 		this.cs = cs;
 	}

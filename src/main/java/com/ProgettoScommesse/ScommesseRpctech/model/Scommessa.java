@@ -14,8 +14,8 @@ public class Scommessa
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "id_schedina")
-	private int id_schedina;
+	@Column(name = "codice")
+	private long codice;
 	@Column(name = "sport")
 	private String sport;
 	@Column(name = "username")
@@ -23,37 +23,37 @@ public class Scommessa
 	@Column(name="partita")
 	private String partita;
 	@Column (name="id_partita")
-	private int codice;
+	private long id_partita;
 	@Column (name="segno")
 	private String segno;
 	@Column (name="quota")
-	private float quota;
+	private double quota;
 	
 	public Scommessa()
 	{
 		super();
 	}
 	
-	public Scommessa(int id_schedina, String sport, String username, String partita, int codice, String segno, float quota)
+	public Scommessa(long codice, String sport, String username, String partita, long id_partita, String segno, double quota)
 	{
 		super();
-		this.id_schedina = id_schedina;
+		this.codice = codice;
 		this.sport = sport;
 		this.username = username;
 		this.partita = partita;
-		this.codice = codice;
+		this.id_partita = id_partita;
 		this.segno = segno;
 		this.quota = quota;
 	}
 
-	public int getId_schedina()
+	public long getCodice()
 	{
-		return id_schedina;
+		return codice;
 	}
 
-	public void setId_schedina(int id_schedina)
+	public void setCodice(long codice)
 	{
-		this.id_schedina = id_schedina;
+		this.codice = codice;
 	}
 
 	public String getSport()
@@ -86,14 +86,14 @@ public class Scommessa
 		this.partita = partita;
 	}
 
-	public int getCodice() 
+	public long getId_partita() 
 	{
-		return codice;
+		return id_partita;
 	}
 
-	public void setCodice(int codice)
+	public void setId_partita(long id_partita)
 	{
-		this.codice = codice;
+		this.id_partita = id_partita;
 	}
 
 	public String getSegno()
@@ -106,12 +106,12 @@ public class Scommessa
 		this.segno = segno;
 	}
 
-	public float getQuota()
+	public double getQuota()
 	{
 		return quota;
 	}
 
-	public void setQuota(float quota)
+	public void setQuota(double quota)
 	{
 		this.quota = quota;
 	}

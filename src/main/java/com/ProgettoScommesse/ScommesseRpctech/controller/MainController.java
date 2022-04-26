@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ import com.ProgettoScommesse.ScommesseRpctech.model.Basket_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Calcio;
 import com.ProgettoScommesse.ScommesseRpctech.model.Utente_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Schedina_service;
+import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa;
 import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa_service;
 
 @RestController
@@ -48,15 +50,31 @@ public class MainController
         return calcio;
     }
     
+    @GetMapping("/scommessa")
     @Transactional
-    public void schedina()
+    public String scommessa()
     {
     	Schedina schedina = new Schedina();
+    	Scommessa scommessa = new Scommessa();
     	
-    	long random = 1 + (int)(Math.random() * 99999999);
+    	Calcio app = (Calcio) sss.findAllC().get(0);
+    	String partita = app.getSq1() + "/" + app.getSq2();
+    	
+    	long random = 1 + (int)(Math.random() * 99999999); //codice schedina
+    	long random2 = 1 + (int)(Math.random() * 99999999); //codice partita
     	
     	schedina.setCs(random);
     	schedina.setImp(10);
     	ss.save(schedina);
+    	
+    	scommessa.setCodice(random);
+    	scommessa.setSport("Calcio");
+    	scommessa.setUsername("Paolo");
+    	scommessa.setPartita(partita);
+    	scommessa.setId_partita(random2);
+    	scommessa.setSegno("X");
+    	scommessa.setQuota(1.5);
+    	sss.save(scommessa);
+    	return "bella";
     }
 }
