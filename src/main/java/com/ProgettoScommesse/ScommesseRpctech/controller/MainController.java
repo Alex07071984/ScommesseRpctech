@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ProgettoScommesse.ScommesseRpctech.model.Volley_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Calcio_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Basket_service;
+import com.ProgettoScommesse.ScommesseRpctech.model.Calcio;
 import com.ProgettoScommesse.ScommesseRpctech.model.Utente_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Schedina_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa_service;
@@ -33,9 +34,13 @@ public class MainController
     @ResponseBody
     @GetMapping("/")
     public ArrayList getAll()
-    {
-        ArrayList ris = new ArrayList();
-        ris = (ArrayList) sss.findAll();
-        return ris;
+    { 
+    	ArrayList calcio = new ArrayList();
+    	for (int c=0; c<cs.findAll().size(); c++)
+    	{
+    		Calcio app = (Calcio) cs.findAll().get(c);
+    		calcio.add(app.getAvv());
+    	}
+        return calcio;
     }
 }

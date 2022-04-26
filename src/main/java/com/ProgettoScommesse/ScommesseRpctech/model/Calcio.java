@@ -54,7 +54,7 @@ public class Calcio
 		this.pareggio=pareggio;
 		this.sq2vincente=sq2vincente;  		   
 	}
-
+	
 	public String getData()
 	{
 		return data;
@@ -153,5 +153,5 @@ public class Calcio
 	public void setSq2vincente(float sq2vincente)
 	{
 		this.sq2vincente = sq2vincente;
-	}   
+	}   	
 }
