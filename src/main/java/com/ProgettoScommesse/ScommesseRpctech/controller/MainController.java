@@ -61,7 +61,6 @@ public class MainController
     	String partita = app.getSq1() + "/" + app.getSq2();
     	
     	long random = 1 + (int)(Math.random() * 99999999); //codice schedina
-    	long random2 = 1 + (int)(Math.random() * 99999999); //codice partita
     	
     	if ((Integer)ss.findId().get(0) == null)
     		schedina.setId(1);
@@ -79,7 +78,7 @@ public class MainController
     	scommessa.setSport("Basket");
     	scommessa.setUsername("Paolo");
     	scommessa.setPartita(partita);
-    	scommessa.setId_partita(random2);
+    	scommessa.setId_partita(app.getAvv());
     	scommessa.setSegno("X");
     	scommessa.setQuota(1.5);
     	sss.save(scommessa);
