@@ -20,6 +20,7 @@ import com.ProgettoScommesse.ScommesseRpctech.model.Utente_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Schedina_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa;
 import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa_service;
+import com.ProgettoScommesse.ScommesseRpctech.model.Utente;
 
 @RestController
 public class MainController
@@ -83,5 +84,27 @@ public class MainController
     	scommessa.setQuota(1.5);
     	sss.save(scommessa);
     	return "bella";
+    }
+    
+    @GetMapping("/utente")
+    @Transactional
+    public String utente()
+    {
+    	Utente utente = new Utente();
+    	
+    	if ((Integer)us.findId().get(0) == null)
+    		utente.setId(1);
+    	else
+    		utente.setId((Integer)us.findId().get(0)+1);
+    	utente.setNome("Paolo");
+    	utente.setCognome("Marini");
+    	utente.setUser("paolino");
+    	utente.setPwd("bella");
+    	utente.setSaldo(20.30);
+    	utente.setCdc(true);
+    	utente.setMag(true);
+    	utente.setDoc("64sbgg");
+    	us.save(utente);
+    	return "Bella";
     }
 }

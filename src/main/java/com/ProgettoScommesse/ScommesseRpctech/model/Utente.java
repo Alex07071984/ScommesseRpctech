@@ -24,7 +24,7 @@ public class Utente
 	@Column(name ="carta_credito")
 	private Boolean cdc;
 	@Column(name ="saldo")
-	private float saldo;
+	private double saldo;
 	@Column(name ="maggiorenne")
 	private Boolean mag;
 	@Column(name ="documento")
@@ -34,15 +34,15 @@ public class Utente
 	{
 		super();
 	}
-	public Utente(int id, String c1, String n1, String u1, String p1, float s1, Boolean cdc, Boolean mag, String doc)
+	public Utente(int id, String cognome, String nome, String user, String pwd, double saldo, Boolean cdc, Boolean mag, String doc)
 	{
 		super();
 		this.id = id;
-		this.cognome = c1;
-		this.nome = n1;
-		this.user = u1;
-		this.pwd = p1;
-		this.saldo = s1;	
+		this.cognome = cognome;
+		this.nome = nome;
+		this.user = user;
+		this.pwd = pwd;
+		this.saldo = saldo;	
 		this.cdc=cdc;
 		this.mag=mag;
 		this.doc=doc;
@@ -106,14 +106,14 @@ public class Utente
 		this.cdc = cdc;
 	}
 
-	public float getSaldo()
+	public double getSaldo()
 	{
 		return saldo;
 	}
 
-	public void setSaldo(float saldo)
+	public void setSaldo(double d)
 	{
-		this.saldo = saldo;
+		this.saldo = d;
 	}
 
 	public Boolean getMag()
