@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class Schedina
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column (name = "codice_schedina")
 	private long cs;
@@ -24,13 +23,22 @@ public class Schedina
 		 super();
 	}
 	  
-	public Schedina(long cs, float imp)
+	public Schedina(int id, long cs, float imp)
 	{
 		super();
+		this.id = id;
 		this.cs = cs;
 		this.imp = imp;
 	}
 
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 	public Long getCs()
 	{
 		return cs;

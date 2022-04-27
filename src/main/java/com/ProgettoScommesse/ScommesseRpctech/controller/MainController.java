@@ -63,12 +63,20 @@ public class MainController
     	long random = 1 + (int)(Math.random() * 99999999); //codice schedina
     	long random2 = 1 + (int)(Math.random() * 99999999); //codice partita
     	
+    	if ((Integer)ss.findId().get(0) == null)
+    		schedina.setId(1);
+    	else
+    		schedina.setId((Integer)ss.findId().get(0)+1);
     	schedina.setCs(random);
     	schedina.setImp(10);
     	ss.save(schedina);
     	
+    	if ((Integer)sss.findId().get(0) == null)
+    		scommessa.setId(1);
+    	else
+    		scommessa.setId((Integer)sss.findId().get(0)+1);
     	scommessa.setCodice(random);
-    	scommessa.setSport("Calcio");
+    	scommessa.setSport("Basket");
     	scommessa.setUsername("Paolo");
     	scommessa.setPartita(partita);
     	scommessa.setId_partita(random2);

@@ -16,4 +16,7 @@ public interface Scommessa_service extends JpaRepository <Scommessa,Integer>
 	@Query("from Volley")
 	abstract
 	List findAllV();
+	@Query("select max(id) from Scommessa")
+	abstract
+	List findId();
 }

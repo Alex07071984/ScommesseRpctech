@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class Utente
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name ="nome")
 	private String nome;
@@ -31,8 +30,14 @@ public class Utente
 	@Column(name ="documento")
 	private String doc;  
 
-	public Utente(String c1, String n1, String u1, String p1, float s1, Boolean cdc, Boolean mag, String doc)
+	public Utente()
 	{
+		super();
+	}
+	public Utente(int id, String c1, String n1, String u1, String p1, float s1, Boolean cdc, Boolean mag, String doc)
+	{
+		super();
+		this.id = id;
 		this.cognome = c1;
 		this.nome = n1;
 		this.user = u1;
@@ -43,6 +48,14 @@ public class Utente
 		this.doc=doc;
 	}
 
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 	public String getNome()
 	{
 		return nome;

@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class Scommessa 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name = "codice")
 	private long codice;
@@ -34,9 +33,10 @@ public class Scommessa
 		super();
 	}
 	
-	public Scommessa(long codice, String sport, String username, String partita, long id_partita, String segno, double quota)
+	public Scommessa(int id, long codice, String sport, String username, String partita, long id_partita, String segno, double quota)
 	{
 		super();
+		this.id = id;
 		this.codice = codice;
 		this.sport = sport;
 		this.username = username;
@@ -46,6 +46,14 @@ public class Scommessa
 		this.quota = quota;
 	}
 
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 	public long getCodice()
 	{
 		return codice;
