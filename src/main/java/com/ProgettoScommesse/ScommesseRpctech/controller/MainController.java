@@ -136,7 +136,7 @@ public class MainController
     	scommessa.setSegno("X");
     	scommessa.setQuota(1.5);
     	sss.save(scommessa);
-    	return "bella";
+    	return "Scommessa Registrata";
     }
     
     @GetMapping("/utente")
@@ -158,6 +158,6 @@ public class MainController
     	utente.setMag(true);
     	utente.setDoc("64sbgg");
     	us.save(utente);
-    	return "Bella";
+    	return "Utente registrato";
     }
 }
