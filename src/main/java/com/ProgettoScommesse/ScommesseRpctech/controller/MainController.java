@@ -7,16 +7,17 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ProgettoScommesse.ScommesseRpctech.model.Volley_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Calcio_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Schedina;
+import com.ProgettoScommesse.ScommesseRpctech.model.Basket;
 import com.ProgettoScommesse.ScommesseRpctech.model.Basket_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Calcio;
 import com.ProgettoScommesse.ScommesseRpctech.model.Utente_service;
+import com.ProgettoScommesse.ScommesseRpctech.model.Volley;
 import com.ProgettoScommesse.ScommesseRpctech.model.Schedina_service;
 import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa;
 import com.ProgettoScommesse.ScommesseRpctech.model.Scommessa_service;
@@ -39,16 +40,68 @@ public class MainController
     Scommessa_service sss;
     
     @ResponseBody
-    @GetMapping("/all")
-    public ArrayList getAll()
+    @GetMapping("/getCalcio")
+    public ArrayList getCalcio()
     { 
     	ArrayList calcio = new ArrayList();
     	for (int c=0; c<cs.findAll().size(); c++)
     	{
     		Calcio app = (Calcio) cs.findAll().get(c);
-    		calcio.add(app.getAvv());
+    		calcio.add(app);
     	}
         return calcio;
+    }
+    
+    @ResponseBody
+    @GetMapping("/getVolley")
+    public ArrayList getVolley()
+    { 
+    	ArrayList volley = new ArrayList();
+    	for (int c=0; c<vs.findAll().size(); c++)
+    	{
+    		Volley app = (Volley) vs.findAll().get(c);
+    		volley.add(app);
+    	}
+        return volley;
+    }
+    
+    @ResponseBody
+    @GetMapping("/getBasket")
+    public ArrayList getBasket()
+    { 
+    	ArrayList basket = new ArrayList();
+    	for (int c=0; c<bs.findAll().size(); c++)
+    	{
+    		Basket app = (Basket) bs.findAll().get(c);
+    		basket.add(app);
+    	}
+        return basket;
+    }
+    
+    @ResponseBody
+    @GetMapping("/getSchedina")
+    public ArrayList getSchedina()
+    { 
+    	ArrayList schedina = new ArrayList();
+    	for (int c=0; c<ss.findAll().size(); c++)
+    	{
+    		Schedina app = (Schedina) ss.findAll().get(c);
+    		schedina.add(app);
+    	}
+        return schedina;
+    }
+    
+    @ResponseBody
+    @GetMapping("/getScommessa")
+    public ArrayList getScommessa()
+    { 
+    	ArrayList scommessa = new ArrayList();
+    	for (int c=0; c<sss.findAll().size(); c++)
+    	{
+    		Scommessa app = (Scommessa) sss.findAll().get(c);
+    		scommessa.add(app);
+    	}
+        return scommessa;
     }
     
     @GetMapping("/scommessa")
